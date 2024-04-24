@@ -1,0 +1,88 @@
+@{
+    ViewData["Title"] = "Turnos";
+}
+
+<h1 id="title">En...</h1>  <br>  <br>
+
+    <style>
+
+        h1 {
+            font-size: 55px;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        /* Estilos para la cuadrícula */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+            gap: 20px; /* Espacio entre elementos */
+            margin-left: 215px;
+            margin-top: 50px;
+        }
+
+        /* Estilos para los botones */
+        .boton {
+            padding: 10px;
+            color: #ffffff;
+            text-align: center;
+            font-size: 30px;
+            border: none;
+            cursor: pointer;
+            width: 330px;
+            height: 100px;
+            border-radius: 10px;
+        }
+
+        .boton:hover {
+            transform: scale(1.04);
+            transition: all 1s ease;
+        }
+
+    </style>
+
+    <div class="grid-container">
+        <button class="boton" id="btnPagos" style="background-color: #FA7C38;">Pagos </button>
+        <button class="boton" id="btnCitas" style="background-color: #FFC847;">Citas</button>
+        <button class="boton" id="btnMedicamentos" style="background-color: #4E0FA6;">Medicamentos</button>
+        <button class="boton" id="btnIg" style="background-color: #52E0BA;">Información General</button>
+    </div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const btnPagos = document.getElementById("btnPagos");
+        const btnCitas = document.getElementById("btnCitas");
+        const btnMedicamentos = document.getElementById("btnMedicamentos");
+        const btnIg = document.getElementById("btnIg");
+        const title = document.getElementById("title")
+
+        btnPagos.addEventListener("click", function () {
+            ocultarBotonesExcepto(btnPagos);
+        });
+
+        btnCitas.addEventListener("click", function () {
+            ocultarBotonesExcepto(btnCitas);
+        });
+
+        btnMedicamentos.addEventListener("click", function () {
+            ocultarBotonesExcepto(btnMedicamentos);
+        });  
+
+        btnIg.addEventListener("click", function () {
+            ocultarBotonesExcepto(btnIg);
+        });     
+
+    })
+
+    function ocultarBotonesExcepto(botonVisible) {
+        const botones = document.querySelectorAll(".boton");
+        const title = document.querySelectorAll(".title")
+        botones.forEach(function (boton) {
+            if (boton!= botonVisible) {
+                boton.style.display = "none";
+            }
+        })
+    }
+</script>
