@@ -34,9 +34,11 @@
             border-radius: 10px;
         }
 
-        .boton:hover {
-            transform: scale(1.04);
-            transition: all 1s ease;
+        .btn-danger{
+            width: 80px;
+            margin-left: 214px;
+            margin-top: 15px;
+            background-color: #F63C3C;
         }
 
     </style>
@@ -48,6 +50,7 @@
         <button class="boton" id="btnIg" style="background-color: #52E0BA;">Información General</button>
     </div>
 
+    <a id="btnNuevo" asp-controller="Turnos" asp-action="Index" style="display: none;" class="btn btn-danger">Volver</a>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -56,22 +59,26 @@
         const btnCitas = document.getElementById("btnCitas");
         const btnMedicamentos = document.getElementById("btnMedicamentos");
         const btnIg = document.getElementById("btnIg");
-        const title = document.getElementById("title")
+        const btnNuevo = document.getElementById("btnNuevo");
 
         btnPagos.addEventListener("click", function () {
             ocultarBotonesExcepto(btnPagos);
+            btnNuevo.style.display = "block"
         });
 
         btnCitas.addEventListener("click", function () {
             ocultarBotonesExcepto(btnCitas);
+            btnNuevo.style.display = "block"
         });
 
         btnMedicamentos.addEventListener("click", function () {
             ocultarBotonesExcepto(btnMedicamentos);
+            btnNuevo.style.display = "block"
         });  
 
         btnIg.addEventListener("click", function () {
             ocultarBotonesExcepto(btnIg);
+            btnNuevo.style.display = "block"
         });     
 
     })
