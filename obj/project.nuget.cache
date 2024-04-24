@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BFfxHzT0iLNAx4CI6fm51PnF1cPsT9Yzqt1DpLsGFYU2AgK5Lw+XyAwP5XgqnPw6THTKIK71QAfOyCX8OQzWxg==",
+  "dgSpecHash": "rvRcQxXJe0TpgmD1KVKoJ98vYmQX7Cbny7gVMF9tNMepN+r2qhJ3P0vJa73HVywZcQWIbXoCb5OrqRh+NNLb5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\camic\\Desktop\\GestionHospital\\Turnos\\Turnos.csproj",
+  "projectFilePath": "/home/santiagolis/Escritorio/eps.1/GestionTurnos/Turnos.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
