@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BFfxHzT0iLNAx4CI6fm51PnF1cPsT9Yzqt1DpLsGFYU2AgK5Lw+XyAwP5XgqnPw6THTKIK71QAfOyCX8OQzWxg==",
+  "dgSpecHash": "LQO+L9XC5sOtOucuBHCmlGebKt8ZD+A6ygGZ+xPDikgr9GaunInbFE2sQuUKnu16dwTwXKvhAwB+FGvuE+W+qg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\camic\\Desktop\\GestionHospital\\Turnos\\Turnos.csproj",
+  "projectFilePath": "/home/riwip5-030/SistemaTurnos/GestionTurnos/Turnos.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
