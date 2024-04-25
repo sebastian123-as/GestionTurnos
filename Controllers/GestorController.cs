@@ -24,8 +24,11 @@ public class GestorController : Controller {
             HttpContext.Session.SetInt32("IdGestor", ValidateCorreo.Id);
             return RedirectToAction("Dashboard");
         }else{
+            TempData["MensajeInicioSesion"] = "Datos incorrectos, por favor intente de nuevo";
             return RedirectToAction("InicioSesion");
         }
+
+        
     }
 
     public IActionResult Dashboard(){

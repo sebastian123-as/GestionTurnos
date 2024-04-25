@@ -3,12 +3,33 @@
     ViewData["Title"] = "Login Gestor";
 }
 
+@{
+    if(TempData["MensajeInicioSesion"] != null)
+    {
+        <div class="alert alert-warning bordes" id="MensajeInicioSesion">@TempData["MensajeInicioSesion"]</div>
+    }
+}
+
+
+<script>
+    var MensajeTemporal = () => {
+        document.getElementById("MensajeInicioSesion").style.display = "none";
+    }
+
+    setTimeout(MensajeTemporal, 5000)
+</script>
+
 <style>
  
+  
+  .alert {
+    margin-top: 20px;
+    border-radius: 10px;
+  }  
 
   .form-container {
   width: 350px;
-  height: 350px;
+  height: 370px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
@@ -107,14 +128,14 @@
 
 
 
- <div class="form-container align-middle">
-      <p class="title">Bienvenido, inicia sesion</p>
+ <div class="form-container">
+      <p class="title">Iniciar Sesion</p>
       <form class="form" asp-controller="Gestor" asp-action="InicioSesion">
         <input asp-for="Correo" type="email" class="input" placeholder="Email">
         <input asp-for="Contraseña" type="password" class="input" placeholder="Password">
 
         </p>
-        <button class="form-btn" type="submit">Iniciar Sesion</button>
+        <button class="form-btn" type="submit">Entrar </button>
       </form>
       <p class="sign-up-label">
  
