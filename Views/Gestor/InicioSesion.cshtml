@@ -16,7 +16,9 @@
         document.getElementById("MensajeInicioSesion").style.display = "none";
     }
 
-    setTimeout(MensajeTemporal, 5000)
+    setTimeout(MensajeTemporal, 5000);
+
+
 </script>
 
 <style>
@@ -130,12 +132,12 @@
 
  <div class="form-container">
       <p class="title">Iniciar Sesion</p>
-      <form class="form" asp-controller="Gestor" asp-action="InicioSesion">
-        <input asp-for="Correo" type="email" class="input" placeholder="Email">
-        <input asp-for="Contraseña" type="password" class="input" placeholder="Password">
+      <form class="form" asp-controller="Gestor" asp-action="InicioSesion" id="formulario">
+        <input asp-for="Correo" required type="email" class="input" placeholder="Email" id="correo">
+        <input asp-for="Contraseña" required type="password" class="input" placeholder="Password" id="password">
 
         </p>
-        <button class="form-btn" type="submit">Entrar </button>
+        <button class="form-btn" id="btnEnviar" type="submit">Entrar </button>
       </form>
       <p class="sign-up-label">
  
