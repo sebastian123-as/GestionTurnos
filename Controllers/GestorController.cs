@@ -20,8 +20,8 @@ public class GestorController : Controller {
         var ValidateCorreo = await _context.Gestores.FirstOrDefaultAsync(x =>
             x.Correo == Correo && x.Contraseña == Contraseña
         );
-
         if(ValidateCorreo != null){
+            HttpContext.Session.SetInt32("IdGestor", ValidateCorreo.Id);
             return RedirectToAction("Dashboard");
         }else{
             return RedirectToAction("InicioSesion");
@@ -29,6 +29,7 @@ public class GestorController : Controller {
     }
 
     public IActionResult Dashboard(){
+        ViewBag.GestorActivo = HttpContext.Session.GetInt32("IdGestor");
         return View();
     }
 }
