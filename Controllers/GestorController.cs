@@ -32,4 +32,10 @@ public class GestorController : Controller {
         ViewBag.GestorActivo = HttpContext.Session.GetInt32("IdGestor");
         return View();
     }
+
+
+    public IActionResult CerrarSesion(){
+        HttpContext.Session.Remove("IdGestor");
+        return RedirectToAction("InicioSesion");
+    }
 }
