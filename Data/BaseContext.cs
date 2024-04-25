@@ -4,7 +4,9 @@ using Turnos.Models;
 namespace Turnos.Data;
 
 public class BaseContext : DbContext{
-    public BaseContext(DbContextOptions<BaseContext> options) : base(options){}
+    public BaseContext(DbContextOptions<BaseContext> options) : base(options){
+        
+    }
 
     //Aqui van registrados los modelos que usan...
     DbSet<Gestor> Gestores {get; set;}
