@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SlKP8vZxLOciFWXaugxG7DFIWyxoI2kHmpOML7jiTm6/oCGGhk0F5s5S4FqW1G7EtMAeMIde5N9C8kMiRPGKtQ==",
+  "dgSpecHash": "0pbiL67gkLU5gvr+zwRjAnE4QEMLNTvNLY9S5OUFV1XncNdy13l+fUKMfOGkRNDQh804c26faqa5auYp7kQs/w==",
   "success": true,
-  "projectFilePath": "/home/santiagolis/eps/GestionTurnos/Turnos.csproj",
+  "projectFilePath": "/home/santiagolis/Escritorio/eps/GestionTurnos/Turnos.csproj",
   "expectedPackageFiles": [
     "/home/santiagolis/.nuget/packages/microsoft.entityframeworkcore/8.0.4/microsoft.entityframeworkcore.8.0.4.nupkg.sha512",
     "/home/santiagolis/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.4/microsoft.entityframeworkcore.abstractions.8.0.4.nupkg.sha512",

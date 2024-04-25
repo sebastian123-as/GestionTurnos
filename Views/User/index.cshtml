@@ -1,0 +1,98 @@
+@{
+    ViewData ["Title"] = "TIPO DE FICHO";
+}
+
+<style type="text/css">
+#grande{ /*border:1px solid #FE2E2E;*/
+         width:100%;
+         height:auto;
+                
+	}
+#uno,#dos,#tres,#cuatro {
+        border: 1px ;
+        width: 400px;
+        height: 300px;
+        display: inline-block;
+        position: relative;
+        background-color:#0597F2;
+    } 
+button.danger {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: #FA7C38;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        height: 70px;
+        width: 190px;
+        }
+    button.success {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color:#FFC847;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        height: 70px;
+        width: 190px;
+        }
+        button.warning {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color:#4E0FA6;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        height: 70px;
+        width: 190px;
+        }
+        button.primary {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color:#F63C3C;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        height: 70px;
+        width: 190px;
+        }
+
+    h2{
+        background-color:ghostwhite;
+        color: black;
+        padding: 10px 20px;
+    }
+	}       
+</style>
+
+<center>
+    
+    <h2>Seleccione el tipo de ficho</h2>
+
+    <div id="grande">
+    <div id="uno"><button asp-action="" asp-controller="" class="danger"><b>Pagos</b></button></div>
+    <div id="dos"><button class="success"><b>Citas</b></button></div>
+    <br>
+    <div id="tres"><button class="warning"><b>Autorización de medciamentos</b></button></div>
+    <div id="cuatro"><button class="primary"><b>Información general</b></button></div>
+    </div>
+
+</center>
+
+ 

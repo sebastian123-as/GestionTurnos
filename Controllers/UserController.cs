@@ -11,12 +11,12 @@ using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 namespace GestionTurnos.Controllers
 {
 
-public class HomeController : Controller
+public class UserController : Controller
 { 
 public readonly BaseContext _context;
 
 
-public HomeController(BaseContext context){
+public UserController(BaseContext context){
 _context = context;
 }
         public IActionResult Index()
