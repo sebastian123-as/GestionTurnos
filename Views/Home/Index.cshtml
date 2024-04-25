@@ -1,0 +1,78 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+    <style>
+        .btn-large{
+            padding: 15px;
+        }
+        .grid-container{
+            width: 500px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin:15px 0px;    
+        }
+
+        .item{
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        .item-ten{
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .atencionpri,.doc{
+            border-radius: 30px;
+            font-size: 16px;
+            width:300px;
+            height:80px;
+            background-color:#32C2B9;
+            color:white;
+        }
+    </style>
+
+<center>
+    <h2>Bienvenido, Ingrese sus datos!</h2>
+    <br>
+    <form action="User"  method="post">
+
+    <select name="tipodoc" class="doc" placeholder="Tipo de documento">
+        <option value="1"><b>Tipo de documento</b></option>
+        <option value="1">Cedula de ciudadania</option>
+        <option value="2">Pasaporte</option>
+        <option value="3">Tarjeta de Identidad</option>
+        <option value="4">Visa</option>
+    </select>
+    <br>
+    <br>
+    <select name="atencion" class="atencionpri">
+        <option value="1"><b>Atención prioritaría</b></option>
+        <option value="1">Embarazo</option>
+        <option value="2">Tercera edad</option>
+        <option value="3">Discapacidad</option>
+        <option value="4">Ninguna</option>
+    </select>
+    <br>
+    <br>
+       <input type="text" class="" id="input">
+    <div class="grid-container">
+        <input type="button" class="item btn-large" value="1" name="" onclick="llenar(1)">
+        <input type="button" class="item btn-large" value="2" name="" onclick="llenar(2)">
+        <input type="button" class="item btn-large" value="3" name="" onclick="llenar(3)">
+        <input type="button" class="item btn-large" value="4" name="" onclick="llenar(4)">
+        <input type="button" class="item btn-large" value="5" name="" onclick="llenar(5)">
+        <input type="button" class="item btn-large" value="6" name="" onclick="llenar(6)">
+        <input type="button" class="item btn-large" value="7" name="" onclick="llenar(7)">
+        <input type="button" class="item btn-large" value="8" name="" onclick="llenar(8)">
+        <input type="button" class="item btn-large" value="9" name="" onclick="llenar(8)">
+        <input type="button" class="item btn-large" value="Limpiar" name="" onclick="Limpiar()">
+        <input type="button" class="item btn-large" value="0" name="" onclick="llenar(0)">
+        <input type="button" class="item btn-large" value="Borrar" name="" onclick="remover()">
+
+    </div>
+
+    <button>Ingresar</button>
+    </form>
+</center>
