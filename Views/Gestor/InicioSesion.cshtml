@@ -6,7 +6,7 @@
 @{
     if(TempData["MensajeInicioSesion"] != null)
     {
-        <div class="alert alert-warning bordes" id="MensajeInicioSesion">@TempData["MensajeInicioSesion"]</div>
+        <div class="alert alert-warning bordes" id="MensajeInicioSesion" >@TempData["MensajeInicioSesion"]</div>
     }
 }
 
@@ -16,12 +16,18 @@
         document.getElementById("MensajeInicioSesion").style.display = "none";
     }
 
-    setTimeout(MensajeTemporal, 5000)
+    setTimeout(MensajeTemporal, 5000);
+
+
 </script>
 
 <style>
- 
-  
+
+
+  body {
+    margin: 0;
+    background-color: teal;
+  }
   .alert {
     margin-top: 20px;
     border-radius: 10px;
@@ -30,13 +36,13 @@
   .form-container {
   width: 350px;
   height: 370px;
-  background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
+  background-color: white;
   box-sizing: border-box;
   padding: 20px 30px;
   margin: 0 auto;
-  margin-top: 100px;  
+  margin-top: 0px;  
 
 }
 
@@ -87,8 +93,7 @@
 
 .form-btn {
   padding: 10px 15px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande","Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   border-radius: 20px;
   border: 0 !important;
   outline: 0 !important;
@@ -110,6 +115,14 @@
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+
+.medicos {
+  width: 320px;
+  height: 210px;
+  display: block;
+  margin: auto;
+}
+
 .sign-up-link {
   margin-left: 1px;
   font-size: 11px;
@@ -123,19 +136,22 @@
 }
 
 
+
+
 </style>
 
 
+<img class="medicos" src="/img/medicos.png" alt="">
 
 
  <div class="form-container">
       <p class="title">Iniciar Sesion</p>
-      <form class="form" asp-controller="Gestor" asp-action="InicioSesion">
-        <input asp-for="Correo" type="email" class="input" placeholder="Email">
-        <input asp-for="Contraseña" type="password" class="input" placeholder="Password">
+      <form class="form" asp-controller="Gestor" asp-action="InicioSesion" id="formulario">
+        <input asp-for="Correo" required type="email" class="input" placeholder="Email" id="correo">
+        <input asp-for="Contraseña" required type="password" class="input" placeholder="Password" id="password">
 
         </p>
-        <button class="form-btn" type="submit">Entrar </button>
+        <button class="form-btn" id="btnEnviar" type="submit">Entrar </button>
       </form>
       <p class="sign-up-label">
  
