@@ -1,3 +1,6 @@
+@{
+    var Counter = ViewBag.Counts;
+}
 <style>
     .sortable-list {
         background: #fff;
@@ -42,55 +45,87 @@
     .item.dragging :where(.details, i) {
         opacity: 0;
     }
+
+    .sortable-list a {
+        text-decoration: none;
+        color: black !important;
+    }
+
+    .counter-tikets {
+        font-size: 25px;
+        border: 1px solid;
+        border-radius: 50%;
+        padding: 5px;
+    }
 </style>
 
-<h1>Bienvenido al Dashboard</h1>
-
-<div class="row">
-    <div style="height: 350px;" class="col-md-4 bg-danger">
+<div class="row mt-5">
+    <div class="col-md-auto text-center">
+        <h3>Conteo turnos</h3>
         <ul class="sortable-list">
-            <li class="item" draggable="true">
+            <a asp-controller="Gestor" asp-action="ColaDeTurnosGestor" asp-route-TipoTurno="1" class="item" draggable="true">
                 <div class="details">
                     <img src="https://www.quepasa.com.ve/site/wp-content/uploads/2017/12/CRPD.jpg" alt="">
                     <span>PRIORITARIOS</span>
                 </div>
                 <i class="uil uil-draggabledots"></i>
-            </li>
-            <li class="item" draggable="true">
+                <span style="width: 50px; background-color: #F63C3C" class="float-end counter-tikets text-center">
+                    @Counter.CountPrioritarios
+                </span>
+            </a>
+
+            <a class="item" draggable="true">
                 <div class="details">
-                    <img src="https://th.bing.com/th/id/OIP.sDp8efVuRJCpI0h2mx5lGgHaE8?w=285&h=190&c=7&r=0&o=5&pid=1.7" alt="">
+                    <img src="https://th.bing.com/th/id/OIP.sDp8efVuRJCpI0h2mx5lGgHaE8?w=285&h=190&c=7&r=0&o=5&pid=1.7"
+                        alt="">
                     <span>MEDICAMENTOS</span>
                 </div>
                 <i class="uil uil-draggabledots"></i>
-            </li>
-            <li class="item" draggable="true">
+                <span style="width: 50px; background-color: #4E0FA6" class="float-end counter-tikets text-center">
+                    @Counter.CountMedicamentos
+                </span>
+            </a>
+
+            <a class="item" draggable="true">
                 <div class="details">
-                    <img src="https://th.bing.com/th/id/R.04ad775d2e4310af6e16f5e814a0480a?rik=z6qTzMq8E%2fbqHg&pid=ImgRaw&r=0" alt="">
+                    <img src="https://th.bing.com/th/id/R.04ad775d2e4310af6e16f5e814a0480a?rik=z6qTzMq8E%2fbqHg&pid=ImgRaw&r=0"
+                        alt="">
                     <span>CITAS</span>
                 </div>
                 <i class="uil uil-draggabledots"></i>
-            </li>
-            <li class="item" draggable="true">
+                <span style="width: 50px; background-color: #FFC847" class="float-end counter-tikets text-center">
+                    @Counter.CountCitas
+                </span>
+            </a>
+
+            <a class="item" draggable="true">
                 <div class="details">
-                    <img src="https://www.comunidadbaratz.com/wp-content/uploads/2021/04/Las-fuentes-de-informacion-son-los-recursos-necesarios-para-poder-acceder-a-la-informacion-y-al-conocimiento.jpg" alt="">
+                    <img src="https://www.comunidadbaratz.com/wp-content/uploads/2021/04/Las-fuentes-de-informacion-son-los-recursos-necesarios-para-poder-acceder-a-la-informacion-y-al-conocimiento.jpg"
+                        alt="">
                     <span>INFORMACION GENERAL</span>
                 </div>
                 <i class="uil uil-draggabledots"></i>
-            </li>
-            <li class="item" draggable="true">
+                <span style="width: 50px; background-color: #52E0BA"" class="float-end counter-tikets text-center">
+                    @Counter.CountInfoGeneral
+                </span>
+            </a>
+
+            <a asp-controller="Gestor" asp-action="ColaDeTurnosGestor" asp-route-TipoTurno="1" class="item" draggable="true">
                 <div class="details">
                     <img src="https://inai.io/hubfs/Header%20-%20What%20Is%20Grandfathering_-min.png" alt="">
                     <span>PAGOS</span>
-                    <div>
-                        p
-                    </div>
+
                 </div>
                 <i class="uil uil-draggabledots"></i>
-            </li>
-            
+                <span style="width: 50px; background-color: #FA7C38" class="float-end counter-tikets text-center">
+                    @Counter.CountPagos
+                </span>
+            </a>
+
         </ul>
     </div>
 </div>
+
 
 <script>
     const sortableList = document.querySelector(".sortable-list");
@@ -118,3 +153,6 @@
 
     sortableList.addEventListener("dragover", initSortableList);
 </script>
+
+
+
