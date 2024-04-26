@@ -1,7 +1,120 @@
+<style>
+    .sortable-list {
+        background: #fff;
+        width: 445px;
+        border-radius: 6px;
+        padding: 30px 25px 20px;
+    }
+
+    .item .details {
+        display: flex;
+        align-items: center;
+    }
+
+    .sortable-list .item {
+        list-style: none;
+        display: flex;
+        border-radius: 5px;
+        margin-bottom: 11px;
+        padding: 10px 13px;
+        align-items: center;
+        border: 1px solid #ccc;
+        justify-content: space-between;
+    }
+
+    .item .details img {
+        width: 43px;
+        height: 43px;
+        margin-right: 12px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .item .details span {
+        font-size: 1.13rem;
+    }
+
+    .item i {
+        color: #474747;
+        font-size: 1.13rem;
+    }
+
+    .item.dragging :where(.details, i) {
+        opacity: 0;
+    }
+</style>
+
 <h1>Bienvenido al Dashboard</h1>
 
 <div class="row">
     <div style="height: 350px;" class="col-md-4 bg-danger">
-
+        <ul class="sortable-list">
+            <li class="item" draggable="true">
+                <div class="details">
+                    <img src="https://www.quepasa.com.ve/site/wp-content/uploads/2017/12/CRPD.jpg" alt="">
+                    <span>PRIORITARIOS</span>
+                </div>
+                <i class="uil uil-draggabledots"></i>
+            </li>
+            <li class="item" draggable="true">
+                <div class="details">
+                    <img src="https://th.bing.com/th/id/OIP.sDp8efVuRJCpI0h2mx5lGgHaE8?w=285&h=190&c=7&r=0&o=5&pid=1.7" alt="">
+                    <span>MEDICAMENTOS</span>
+                </div>
+                <i class="uil uil-draggabledots"></i>
+            </li>
+            <li class="item" draggable="true">
+                <div class="details">
+                    <img src="https://th.bing.com/th/id/R.04ad775d2e4310af6e16f5e814a0480a?rik=z6qTzMq8E%2fbqHg&pid=ImgRaw&r=0" alt="">
+                    <span>CITAS</span>
+                </div>
+                <i class="uil uil-draggabledots"></i>
+            </li>
+            <li class="item" draggable="true">
+                <div class="details">
+                    <img src="https://www.comunidadbaratz.com/wp-content/uploads/2021/04/Las-fuentes-de-informacion-son-los-recursos-necesarios-para-poder-acceder-a-la-informacion-y-al-conocimiento.jpg" alt="">
+                    <span>INFORMACION GENERAL</span>
+                </div>
+                <i class="uil uil-draggabledots"></i>
+            </li>
+            <li class="item" draggable="true">
+                <div class="details">
+                    <img src="https://inai.io/hubfs/Header%20-%20What%20Is%20Grandfathering_-min.png" alt="">
+                    <span>PAGOS</span>
+                    <div>
+                        p
+                    </div>
+                </div>
+                <i class="uil uil-draggabledots"></i>
+            </li>
+            
+        </ul>
     </div>
 </div>
+
+<script>
+    const sortableList = document.querySelector(".sortable-list");
+    const items = document.querySelectorAll(".item");
+
+    items.forEach(item => {
+        item.addEventListener("dragstart", () => {
+            setTimeout(() => item.classList.add("dragging"), 0);
+        });
+        item.addEventListener("dragend", () => item.classList.remove("dragging"));
+    });
+
+    const initSortableList = (e) => {
+        e.preventDefault();
+        const dragginItem = sortableList.querySelector(".dragging");
+
+        const siblings = [...sortableList.querySelectorAll(".item:not(.dragging)")];
+
+        let nexSibling = siblings.find(sibling => {
+            return e.clientY <= sibling.offsetTop + sibling.offsetHeight / 2;
+        });
+
+        sortableList.insertBefore(dragginItem, nexSibling);
+    }
+
+    sortableList.addEventListener("dragover", initSortableList);
+</script>
