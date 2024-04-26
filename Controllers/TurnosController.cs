@@ -6,5 +6,9 @@ namespace mientras.Controllers {
         public IActionResult Index() {
             return View();
         }
+
+        public IActionResult ListaTurnos() {
+            return View();
+        }
     }
 }
