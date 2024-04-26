@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/santiagolis/Escritorio/eps/GestionTurnos/Turnos.csproj": {}
+    "/home/riwip5-031/epsl/GestionTurnos/Turnos.csproj": {}
   },
   "projects": {
-    "/home/santiagolis/Escritorio/eps/GestionTurnos/Turnos.csproj": {
+    "/home/riwip5-031/epsl/GestionTurnos/Turnos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/santiagolis/Escritorio/eps/GestionTurnos/Turnos.csproj",
+        "projectUniqueName": "/home/riwip5-031/epsl/GestionTurnos/Turnos.csproj",
         "projectName": "Turnos",
-        "projectPath": "/home/santiagolis/Escritorio/eps/GestionTurnos/Turnos.csproj",
-        "packagesPath": "/home/santiagolis/.nuget/packages/",
-        "outputPath": "/home/santiagolis/Escritorio/eps/GestionTurnos/obj/",
+        "projectPath": "/home/riwip5-031/epsl/GestionTurnos/Turnos.csproj",
+        "packagesPath": "/home/riwip5-031/.nuget/packages/",
+        "outputPath": "/home/riwip5-031/epsl/GestionTurnos/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/santiagolis/.nuget/NuGet/NuGet.Config"
+          "/home/riwip5-031/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"

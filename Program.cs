@@ -11,6 +11,13 @@ builder.Services.AddDbContext<BaseContext> (options =>
         Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")
     )
 );
+builder.Services.AddSession(options => {
+    options.IdleTimeout = TimeSpan.FromMinutes(25);
+    options.Cookie.IsEssential = true;
+    options.Cookie.HttpOnly = true;
+}
+);
+
 
 var app = builder.Build();
 

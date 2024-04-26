@@ -3,21 +3,17 @@
 
 // Write your JavaScript code.
 const input = document.getElementById("input");
-        let texto = "";
 
 
         function llenar(valor){
-            console.log(valor);
-            texto += valor;
-            input.value = texto;
+            input.value += valor;
+            console.log(input.value);
         }
 
         function remover(){
-            texto = texto.slice(0, -1);
-            input.value = texto;
+            input.value = input.value.slice(0, -1);
         }
 
         function Limpiar(){
-            texto = "";
-            input.value = texto;
+            input.value = "";
         }
