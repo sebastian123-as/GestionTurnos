@@ -16,7 +16,7 @@
         position: relative;
         background-color:#0597F2;
     } 
-button.danger {
+a.danger {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -30,7 +30,7 @@ button.danger {
         height: 70px;
         width: 190px;
         }
-    button.success {
+    a.success {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -44,7 +44,7 @@ button.danger {
         height: 70px;
         width: 190px;
         }
-        button.warning {
+        a.warning {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -58,7 +58,7 @@ button.danger {
         height: 70px;
         width: 190px;
         }
-        button.primary {
+        a.primary {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -86,11 +86,11 @@ button.danger {
     <h2>Seleccione el tipo de ficho</h2>
 
     <div id="grande">
-    <div id="uno"><button asp-action="" asp-controller="" class="danger"><b>Pagos</b></button></div>
-    <div id="dos"><button class="success"><b>Citas</b></button></div>
-    <br>
-    <div id="tres"><button class="warning"><b>Autorización de medciamentos</b></button></div>
-    <div id="cuatro"><button class="primary"><b>Información general</b></button></div>
+        <div id="uno"><a asp-action="Generar" asp-controller="User" asp-route-tipo="3" class="danger"><b>Pagos</b></a></div>
+        <div id="dos"><a asp-action="Generar" asp-controller="User" asp-route-tipo="4" class="success"><b>Citas</b></a></div>
+        <br>
+        <div id="tres"><a asp-action="Generar" asp-controller="User" asp-route-tipo="1" class="warning"><b>Autorización de medicamentos</b></a></div>
+        <div id="cuatro"><a asp-action="Generar" asp-controller="User" asp-route-tipo="2" class="primary"><b>Información general</b></a></div>
     </div>
 
 </center>

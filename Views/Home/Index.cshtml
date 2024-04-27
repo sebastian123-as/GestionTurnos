@@ -59,20 +59,21 @@
     <form asp-controller="User" asp-action="Index">
 
         <select name="tipodoc" class="doc" placeholder="Tipo de documento">
-            <option disabled selected value="0"><b>Tipo de documento</b></option>
-            <option value="1">Cedula de ciudadania</option>
+            <option disabled selected ><b>Tipo de documento</b></option>
+            <option value="1">DNI</option>
             <option value="2">Pasaporte</option>
-            <option value="3">Tarjeta de Identidad</option>
-            <option value="4">Visa</option>
+            <option value="5">Tarjeta de Identidad</option>
+            <option value="3">Licencia</option>
+            <option value="4">Cedula</option>
         </select>
         <br>
         <br>
         <select name="atencion" class="atencionpri">
-            <option value="1"><b>Atención prioritaría</b></option>
-            <option value="1">Embarazo</option>
-            <option value="2">Tercera edad</option>
-            <option value="3">Discapacidad</option>
-            <option value="4">Ninguna</option>
+            <option disabled selected><b>Atención prioritaría</b></option>
+            <option value="true">Embarazo</option>
+            <option value="true">Tercera edad</option>
+            <option value="true">Discapacidad</option>
+            <option value="false">Ninguna</option>
         </select>
         <br>
         <br>
