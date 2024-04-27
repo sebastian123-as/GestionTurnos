@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 
 
-namespace GestionTurnos.Controllers
+namespace Turnos.Controllers
 {
 
     public class UserController : Controller
