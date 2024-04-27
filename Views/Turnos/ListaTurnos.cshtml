@@ -1,7 +1,9 @@
-<h1>Turnos</h1>
 
+<h1 class="TitleTurno">Turnos</h1>
 
-<h1>Siguiente Turno</h1>
+<br> <br> <br>
+<h1 class="subTitleTurno">Siguiente Turno</h1>
+ 
 
 <div class="parent">
     <div class="div1">1</div>
@@ -11,21 +13,52 @@
     <div class="div5">5</div>
 </div>
 
+ <div class="SigTurno"></div>
+
 <style>
+
+
+    .SigTurno {
+        height: 100px;
+        width: 300px;
+        border: 3px solid black;
+        float: right;
+        margin-top: -490px;
+    }
+
+    .TitleTurno {
+        margin-top: 50px;
+        position: absolute;
+    }
+
+    .subTitleTurno {
+        text-align: right;
+    }
+
+    
     .parent {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(5, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
+        gap: 2px;
     }
 
-    .div1 { grid-area: 1 / 1 / 2 / 2; }
+    .div1 { grid-area: 1 / 1 / 2 / 2; 
+
+         background-color: #5E17EB;
+     }
     .div2 { grid-area: 2 / 1 / 3 / 2; }
     .div3 { grid-area: 3 / 1 / 4 / 2; }
     .div4 { grid-area: 4 / 1 / 5 / 2; }
     .div5 { grid-area: 5 / 1 / 6 / 2; }
     
+    .parent div {
+        height: 100px;
+        width: 300px;
+        border: 3px solid black;
+        
+    }
 </style>
 
-<button>oe</button>
