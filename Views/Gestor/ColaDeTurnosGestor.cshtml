@@ -1,9 +1,79 @@
-<div class="row">
-    <ul>
-        @foreach(var i in ViewBag.BusquedaTurnos){
-            <li>
-                <span>@i.Discapacidad</span>
-            </li>
+@{
+    //Se crea un contador en 0 para validar cuando llegue a 1 saber cual va ser el siguiente turno
+    int ConteoTurnos1 = 0;
+    
+    //a esta variable se agregara el valor en este caso el Id
+    int TurnoSiguiente = 0;
+
+    //El respectivo foreach para buscar al proximo turno que se le dara siguiente
+    foreach(var t in ViewBag.BusquedaTurnos){
+        ConteoTurnos1++;
+        if(ConteoTurnos1 == 1){
+            TurnoSiguiente = t.Id;
         }
-    </ul>
+    }
+}
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1>COLA DE TURNOS</h1>
+    </div>
 </div>
+
+
+<div class="row">
+    <div class="col-md-3 mt-5 text-center">
+        <a asp-controller="Gestor" asp-action="SiguienteTurno" asp-route-id="@TurnoSiguiente" class="btn btn-success" >Siguiente turno</a>
+    </div>
+    <div class="col-md-4 offset-md-5  text-center">
+        <div class="SigTurno">
+            @if(ViewBag.BusquedaEstadoAtendiendo != null){
+                <p style="color: white;">@ViewBag.BusquedaEstadoAtendiendo.Tiket</p>
+            }
+        </div>
+
+        <button class="btn btn-danger mt-3">Finalizar turno</button>
+    </div>
+</div>
+
+<div>
+    @foreach (var i in ViewBag.BusquedaTurnos)
+    {
+        <div class="row">
+            <div style="background-color: #0597F2;" class="col-md-4 EstilosGenerales mb-1">
+                <h1 style="color: white;">@i.Tiket</h1>
+            </div>
+        </div>
+
+    }
+</div>
+
+
+@* <div class="row">
+<ul>
+@foreach(var i in ViewBag.BusquedaTurnos){
+<li>
+<span>@i.Discapacidad @i.Tiket</span>
+</li>
+}
+</ul>
+</div> *@
+
+
+<style>
+    .EstilosGenerales {
+        height: 100px;
+        width: 300px;
+        border: 3px solid black;
+        border-radius: 20px;
+    }
+
+    .SigTurno {
+        height: 100px;
+        width: 300px;
+        border: 3px solid black;
+        background-color: #5E17EB;
+        border-radius: 20px;
+
+    }
+</style>

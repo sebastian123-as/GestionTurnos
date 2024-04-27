@@ -1,8 +1,6 @@
-using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using Turnos.Data;
 using Turnos.Models;
-using System.IO;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -46,10 +44,10 @@ namespace Turnos.Controllers
             var Tipoturno = _context.TipoTurno.FirstOrDefault(m => m.Id == tipo);
             var pacientes = _context.Pacientes.FirstOrDefault(m => m.Id == HttpContext.Session.GetInt32("Id"));
 
-            var turnon = new Turno()
+            Turno turnon = new()
             {
                 Discapacidad = bool.Parse(TempData["Discapacidad"].ToString()),
-                Estado = true,
+                IdEstado = 1,
                 Tiket = $"{Tipoturno.Tipo}-{turnoactual + 1}",
                 IdPaciente = pacientes.Id,
                 IdTipoTurno = Tipoturno.Id
