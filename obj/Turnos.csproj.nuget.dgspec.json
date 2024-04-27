@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/santiagolis/Escritorio/eps/GestionTurnos/Turnos.csproj": {}
+    "C:\\Users\\camic\\Desktop\\GestionHospital\\Turnos\\Turnos.csproj": {}
   },
   "projects": {
-    "/home/santiagolis/Escritorio/eps/GestionTurnos/Turnos.csproj": {
+    "C:\\Users\\camic\\Desktop\\GestionHospital\\Turnos\\Turnos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/santiagolis/Escritorio/eps/GestionTurnos/Turnos.csproj",
+        "projectUniqueName": "C:\\Users\\camic\\Desktop\\GestionHospital\\Turnos\\Turnos.csproj",
         "projectName": "Turnos",
-        "projectPath": "/home/santiagolis/Escritorio/eps/GestionTurnos/Turnos.csproj",
-        "packagesPath": "/home/santiagolis/.nuget/packages/",
-        "outputPath": "/home/santiagolis/Escritorio/eps/GestionTurnos/obj/",
+        "projectPath": "C:\\Users\\camic\\Desktop\\GestionHospital\\Turnos\\Turnos.csproj",
+        "packagesPath": "C:\\Users\\camic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\camic\\Desktop\\GestionHospital\\Turnos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/santiagolis/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\camic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -66,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
