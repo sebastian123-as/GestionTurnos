@@ -1,0 +1,25 @@
+@model Gestor;
+@{
+    ViewData["Title"] = "Login Gestor";
+}
+
+<div class="d-flex justify-content-center">
+    <div class="col-md-5">
+        
+        <form asp-controller="Gestor" asp-action="Home">
+            <h1 class="text-center mb-4">Iniciar Sesión</h1>
+            <div class="mb-3">
+                <label style="font-weight: bold;" class="form-label">Correo</label>
+                <input asp-for="Correo" style="height: 50px; font-size: 20px" type="email" class="form-control" placeholder="example@example.ex">
+            </div>
+            <div class="mb-3">
+                <label style="font-weight: bold;" class="form-label">Contraseña</label>
+                <input asp-for="Contraseña" style="height: 50px; font-size: 20px" type="password" class="form-control" placeholder="123456789">
+            </div>
+            <div class="text-center">
+                <button style="font-weight: bold; color: white;" type="submit" class="w-25 btn btn-info">Ingresar</button>
+            </div>
+        </form>
+
+    </div>
+</div>
