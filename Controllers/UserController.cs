@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 
 
-namespace GestionTurnos.Controllers
+namespace Turnos.Controllers
 {
 
     public class UserController : Controller

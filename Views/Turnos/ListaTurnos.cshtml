@@ -1,0 +1,93 @@
+<div class="row">
+    <div class="col-md-3 text-center">
+        <h1 class="TitleTurno">Turnos</h1>
+    </div>
+
+    <div class="col-md-4 offset-md-3">
+        <br>
+        <h1 class="subTitleTurno">Siguiente Turno</h1><br>
+    </div>
+</div>
+@{
+    var e = 0;
+}
+
+<div>
+    @foreach (var i in ViewBag.Turnos)
+    {
+        e++;
+        if (e == 1)
+        {
+            <div class="row">
+                <div class="col-md-4 offset-md-7 SigTurno">
+                    <h1>@i.Tiket</h1>
+                </div>
+            </div>
+        }
+        else
+        {
+            if (i.Discapacidad == true)
+            {
+                <div class="row">
+                    <div style="background-color: #4E0FA6;" class="col-md-4 EstilosGenerales mb-1">
+                        <h1 style="color: white;">@i.Tiket</h1>
+
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    <div style="background-color: #0597F2;" class="col-md-4 EstilosGenerales mb-1">
+                        <h1 style="color: white;">@i.Tiket</h1>
+                    </div>
+                </div>
+            }
+        }
+
+    }
+</div>
+
+
+
+<style>
+
+    
+
+    img {
+        width: 300px;
+        height: 200px;
+        
+    }
+
+    h1 {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .EstilosGenerales {
+        height: 100px;
+        width: 300px;
+        border: 3px solid black;
+        border-radius: 20px;
+    }
+
+    .SigTurno {
+        height: 100px;
+        width: 300px;
+        border: 3px solid black;
+        background-color: #5E17EB;
+        border-radius: 20px;
+
+    }
+
+    .TitleTurno {
+        margin-top: 50px;
+        position: absolute;
+    }
+
+    .subTitleTurno {
+        text-align: right;
+        margin-top: 25px;
+    }
+</style>
