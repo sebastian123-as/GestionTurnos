@@ -12,6 +12,7 @@ public class GestorController : Controller {
         _context = context;
     }
 
+    //Inicio sesion
     public IActionResult InicioSesion(){
         return View();
     }
@@ -37,6 +38,7 @@ public class GestorController : Controller {
         
     }
 
+    //Dashboard
     public async Task<IActionResult> Dashboard(){
         //Se recibe el id del gestor
         ViewBag.GestorActivo = HttpContext.Session.GetInt32("IdGestor");
@@ -55,7 +57,8 @@ public class GestorController : Controller {
         return View();
     }
 
-
+    
+    //Cola de turnos
     public async Task<IActionResult> ColaDeTurnosGestor(int? TipoTurno){
         //Se valida que el tipo de turno no sea prioridad
         if(TipoTurno != 6){
@@ -77,6 +80,7 @@ public class GestorController : Controller {
         
     }
 
+    //Siguiente turno
     public async Task<IActionResult> SiguienteTurno(int? id){
         //Se valida que el id exista
         var SiguienteTurno = await _context.Turnos.FirstOrDefaultAsync(x => x.Id == id);
@@ -91,6 +95,19 @@ public class GestorController : Controller {
         return RedirectToAction("ColaDeTurnosGestor", "Gestor", new {TipoTurno = SiguienteTurno.IdTipoTurno});
     }
 
+
+    //Finalizar turno
+    public async Task<IActionResult> FinalizarTurno(string? tiket){
+        var TurnoAFinalizar = await _context.Turnos.FirstOrDefaultAsync(x => x.Tiket == tiket && x.IdEstado == 3);
+        if(TurnoAFinalizar != null){
+            TurnoAFinalizar.IdEstado = 2;
+            await _context.SaveChangesAsync();
+            return RedirectToAction("ColaDeTurnosGestor", "Gestor", new {TipoTurno = TurnoAFinalizar.IdTipoTurno});
+        }else{
+            return RedirectToAction("Dashboard", "Gestor");
+        }
+    
+    }
     
 
     public IActionResult CerrarSesion(){

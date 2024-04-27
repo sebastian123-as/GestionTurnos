@@ -23,16 +23,22 @@
 
 <div class="row">
     <div class="col-md-3 mt-5 text-center">
-        <a asp-controller="Gestor" asp-action="SiguienteTurno" asp-route-id="@TurnoSiguiente" class="btn btn-success" >Siguiente turno</a>
+        @if(TurnoSiguiente != 0){
+            if(@ViewBag.BusquedaEstadoAtendiendo == null){
+                <a asp-controller="Gestor" asp-action="SiguienteTurno" asp-route-id="@TurnoSiguiente" class="btn btn-success mb-2" >Siguiente turno</a>
+            }
+        }
     </div>
     <div class="col-md-4 offset-md-5  text-center">
-        <div class="SigTurno">
-            @if(ViewBag.BusquedaEstadoAtendiendo != null){
-                <p style="color: white;">@ViewBag.BusquedaEstadoAtendiendo.Tiket</p>
-            }
-        </div>
+        @if(ViewBag.BusquedaEstadoAtendiendo != null){
+            <div class="SigTurno">
+                
+                    <p style="color: white;">@ViewBag.BusquedaEstadoAtendiendo.Tiket</p>
+                
+            </div>
 
-        <button class="btn btn-danger mt-3">Finalizar turno</button>
+            <a asp-controller="Gestor" asp-action="FinalizarTurno" asp-route-tiket="@ViewBag.BusquedaEstadoAtendiendo.Tiket" class="btn btn-danger mt-3">Finalizar turno</a>
+        }
     </div>
 </div>
 
@@ -46,6 +52,11 @@
         </div>
 
     }
+    <div class="row">
+        <div class="col-md-3 text-center mt-2">
+            <a asp-controller="Gestor" asp-action="Dashboard" class="btn btn-secondary">Regresar</a>
+        </div>
+    </div>
 </div>
 
 
