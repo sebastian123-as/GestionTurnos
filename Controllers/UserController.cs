@@ -4,7 +4,6 @@ using Turnos.Data;
 using Turnos.Models;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 
 
@@ -26,13 +25,13 @@ namespace Turnos.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(string? Documento, bool Discapacidad, int tipodoc)
+        public async Task<IActionResult> Index(string? Documento, bool atencion, int tipodoc)
         {
             var user = await _context.Pacientes.FirstOrDefaultAsync(m => m.Documento == Documento && m.IdTipoDocumento == tipodoc);
             if (user != null)
             {
                 HttpContext.Session.SetInt32("Id", user.Id); //crear variable de sesion
-                TempData["Discapacidad"] = Discapacidad;
+                TempData["Discapacidad"] = atencion;
                 return View();
             }
             else

@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Turnos.Data;
+using System.Speech.Synthesis;
+
 
 namespace Turnos.Controllers {
     public class TurnosController : Controller {
@@ -19,5 +21,6 @@ namespace Turnos.Controllers {
             ViewBag.Turnos = _context.Turnos.Where(x => x.Estado == true).Take(6);
             return View();
         }
+
     }
 }

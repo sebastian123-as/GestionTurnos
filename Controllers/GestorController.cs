@@ -32,14 +32,16 @@ public class GestorController : Controller {
         
     }
 
-    public IActionResult Dashboard(){
+    public async Task<IActionResult> Dashboard(){
         ViewBag.GestorActivo = HttpContext.Session.GetInt32("IdGestor");
+        
+
         CountTurnos oCountTurnos = new(){
-            CountPrioritarios = 1,
-            CountMedicamentos = 1,
-            CountCitas = 1,
-            CountInfoGeneral = 1,
-            CountPagos = 1
+            CountPrioritarios = _context.Turnos.Where(x => x.Discapacidad == true && x.Estado == true).Count(),
+            CountMedicamentos = _context.Turnos.Where(x => x.Discapacidad == false && x.Estado == true && x.IdTipoTurno == 1).Count(),
+            CountCitas = _context.Turnos.Where(x => x.Discapacidad == false && x.Estado == true && x.IdTipoTurno == 4).Count(),
+            CountInfoGeneral = _context.Turnos.Where(x => x.Discapacidad == false && x.Estado == true && x.IdTipoTurno == 2).Count(),
+            CountPagos = _context.Turnos.Where(x => x.Discapacidad == false && x.Estado == true && x.IdTipoTurno == 3).Count()
         };
 
         ViewBag.Counts = oCountTurnos;
