@@ -1,3 +1,7 @@
+@{
+    var SiguienteTurno = ViewBag.SiguienteTurno;
+}
+
 <div class="row">
     <div class="col-md-3 text-center">
         <h1 class="TitleTurno">Turnos</h1>
@@ -8,56 +12,39 @@
         <h1 class="subTitleTurno">Siguiente Turno</h1><br>
     </div>
 </div>
-@{
-    var e = 0;
-}
 
 <div>
-    @foreach (var i in ViewBag.Turnos)
+    @if (SiguienteTurno != null)
     {
-        e++;
-        if (e == 1)
+        <div class="row">
+            <div class="col-md-4 offset-md-7 SigTurno">
+                <h1>@SiguienteTurno.Tiket</h1>
+            </div>
+        </div>
+    }
+
+    @if (ViewBag.Turnos != null)
+    {
+        @foreach (var i in ViewBag.Turnos)
         {
             <div class="row">
-                <div class="col-md-4 offset-md-7 SigTurno">
-                    <h1>@i.Tiket</h1>
+                <div style="background-color: #0597F2;" class="col-md-4 EstilosGenerales mb-1">
+                    <h1 style="color: white;">@i.Tiket</h1>
                 </div>
             </div>
-        }
-        else
-        {
-            if (i.Discapacidad == true)
-            {
-                <div class="row">
-                    <div style="background-color: #4E0FA6;" class="col-md-4 EstilosGenerales mb-1">
-                        <h1 style="color: white;">@i.Tiket</h1>
 
-                    </div>
-                </div>
-            }
-            else
-            {
-                <div class="row">
-                    <div style="background-color: #0597F2;" class="col-md-4 EstilosGenerales mb-1">
-                        <h1 style="color: white;">@i.Tiket</h1>
-                    </div>
-                </div>
-            }
         }
-
     }
+
 </div>
 
 
 
 <style>
-
-    
-
     img {
         width: 300px;
         height: 200px;
-        
+
     }
 
     h1 {

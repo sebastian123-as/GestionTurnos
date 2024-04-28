@@ -62,6 +62,7 @@ public class GestorController : Controller {
     public async Task<IActionResult> ColaDeTurnosGestor(int? TipoTurno){
         //Se valida que el tipo de turno no sea prioridad
         if(TipoTurno != 6){
+            HttpContext.Session.SetInt32("ColaTurnoActual", TipoTurno.Value);
             //se valida que el tipo sea igual al que se ingresa por parametro y el estado del turno sea activo de esta busqueda solo tomamos 5
             var BusquedaTurnos = _context.Turnos.Where(x => x.IdTipoTurno == TipoTurno && x.Discapacidad == false && x.IdEstado == 1 ).Take(5);
             
@@ -73,6 +74,7 @@ public class GestorController : Controller {
             ViewBag.BusquedaTurnos = BusquedaTurnos;
             return View();
         }else{
+            HttpContext.Session.SetInt32("ColaTurnoActual", 6);
             var BusquedaTurnos = _context.Turnos.Where(x => x.Discapacidad == true && x.IdEstado == 1).Take(5);
             ViewBag.BusquedaTurnos = BusquedaTurnos;
             return View();
