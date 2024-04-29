@@ -48,11 +48,10 @@ namespace Turnos.Controllers
                 ViewBag.Turnos = _context.Turnos.Where(x => x.IdEstado == 1).Take(5);
                 return View();
             }
+        }
 
-
-
-
-
+        public IActionResult ErrorValidacion(){
+            return View();
         }
 
     }

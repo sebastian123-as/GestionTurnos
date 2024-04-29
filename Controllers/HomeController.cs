@@ -30,7 +30,7 @@ namespace Turnos.Controllers
             {
                 HttpContext.Session.SetInt32("Id", user.Id); //crear variable de sesion
                 TempData["Discapacidad"] = atencion;
-                return View();
+                return RedirectToAction("VistaGenerar", "Home");
             }
             else
             {
