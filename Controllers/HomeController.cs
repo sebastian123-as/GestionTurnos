@@ -63,7 +63,7 @@ namespace Turnos.Controllers
                 };
                 _context.Turnos.Add(turnon);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Turno", "Home", new {id = turnon.Id});
             }else{
                 Turno oTurno = new(){
                     Discapacidad = false,
@@ -74,8 +74,14 @@ namespace Turnos.Controllers
                 };
                 _context.Turnos.Add(oTurno);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Turno", "Home", new {id = oTurno.Id});
             }
+        }
+        public async Task<IActionResult> Turno(int id)
+        {
+            ViewBag.Esto = await _context.Turnos.FirstOrDefaultAsync(x => x.Id == id);
+            
+            return View();
         }
 
     }
