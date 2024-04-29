@@ -38,29 +38,44 @@ namespace Turnos.Controllers
             }
         }
 
-        public IActionResult VistaGenerar(){
+        public IActionResult VistaGenerar()
+        {
             return View();
         }
 
-        public IActionResult Generar(int? tipo)
+        public IActionResult Generar(int? tipo, string? UsuarioNoexistente)
         {
-            //return Json (discapacidad);
-            var turnoactual = _context.Turnos.ToList().Count();
-            var Tipoturno = _context.TipoTurno.FirstOrDefault(m => m.Id == tipo);
-            var pacientes = _context.Pacientes.FirstOrDefault(m => m.Id == HttpContext.Session.GetInt32("Id"));
+            int turnoactual = _context.Turnos.ToList().Count();
 
-            Turno turnon = new()
+            if (UsuarioNoexistente != "True")
             {
-                Discapacidad = bool.Parse(TempData["Discapacidad"].ToString()),
-                IdEstado = 1,
-                Tiket = $"{Tipoturno.Tipo}-{turnoactual + 1}",
-                IdPaciente = pacientes.Id,
-                IdTipoTurno = Tipoturno.Id
+                var Tipoturno = _context.TipoTurno.FirstOrDefault(m => m.Id == tipo);
+                var pacientes = _context.Pacientes.FirstOrDefault(m => m.Id == HttpContext.Session.GetInt32("Id"));
 
-            };
-            _context.Turnos.Add(turnon);
-            _context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+                Turno turnon = new()
+                {
+                    Discapacidad = bool.Parse(TempData["Discapacidad"].ToString()),
+                    IdEstado = 1,
+                    Tiket = $"{Tipoturno.Tipo}-{turnoactual + 1}",
+                    IdPaciente = pacientes.Id,
+                    IdTipoTurno = Tipoturno.Id
+
+                };
+                _context.Turnos.Add(turnon);
+                _context.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }else{
+                Turno oTurno = new(){
+                    Discapacidad = false,
+                    IdEstado = 1,
+                    Tiket = $"IG-{turnoactual + 1}",
+                    IdPaciente = null,
+                    IdTipoTurno = 2
+                };
+                _context.Turnos.Add(oTurno);
+                _context.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
         }
 
     }

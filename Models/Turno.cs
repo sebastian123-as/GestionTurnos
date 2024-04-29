@@ -6,6 +6,6 @@ public class Turno{
     public string? Tiket {get; set;}
     public int IdEstado {get; set;}
     public int IdTipoTurno {get; set;}
-    public int IdPaciente {get; set;}
+    public int? IdPaciente {get; set;}
 
 }

@@ -5,13 +5,13 @@
 <br> <br> <br> <br> 
 
 <div class="d-flex justify-content-center">
-    <a asp-controller="User" asp-action="Generar" ><h1 class="textoBtn">Intentar de nuevo</h1></a>
+    <a asp-controller="Home" asp-action="Index" ><h1 class="textoBtn">Intentar de nuevo</h1></a>
 </div>
 
 <br>
 
 <div class="d-flex justify-content-center btn">
-    <a class="info"><h1 class="titleInfo">Informacion General</h1></a>
+    <a asp-controller="Home" asp-action="Generar" asp-route-UsuarioNoexistente="True" class="info"><h1 class="titleInfo">Informacion General</h1></a>
 </div>
 <style>
 
