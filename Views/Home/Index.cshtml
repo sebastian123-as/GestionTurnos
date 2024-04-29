@@ -39,20 +39,21 @@
         width: 300px;
         height: 40px;
         background-color: #32C2B9;
-        color: white;
+        color: #FFF5EE;
         text-shadow: 0px 1px 1px black;
     }
 
     .input {
-        border-radius: 30px;
+        border-radius: 10px;
         font-size: 16px;
         width: 300px;
         height: 40px;
         color: black;
+        border: 1px solid black
     }
 
     .btnDocumento{
-        color: white;
+        color: #FFF5EE;
         background-image: url(https://i.etsystatic.com/7388389/r/il/354b3d/2434422114/il_fullxfull.2434422114_2qqm.jpg);
         background-size: cover;
         border: 2px solid black;
@@ -68,12 +69,16 @@
     }
 
     .buttonIngresar{
+        color: #FFF5EE;
+        text-shadow: 0px 1px 1px black;
         box-shadow: 10px 7px 1px black;
-        border-radius: 50px;
-        font-size: 16px;
+        border-radius: 20px;
+        font-size: 20px;
+        font-weight: bold;
         width: 190px;
         height: 50px;
-        color: black;
+        border: 1px solid black;
+        background-color: #52E0BA;
     }
 
     .buttonIngresar:active{
@@ -83,7 +88,7 @@
 </style>
 
 <center>
-    <h2>Bienvenido, Ingrese sus datos!</h2>
+    <h2 class="mt-3">Bienvenido, Ingrese sus datos!</h2>
     <br>
     <form asp-controller="User" asp-action="Index">
 
