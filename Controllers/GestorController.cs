@@ -100,10 +100,15 @@ public class GestorController : Controller {
 
     //Finalizar turno
     public async Task<IActionResult> FinalizarTurno(string? tiket){
+        //Buscamos el id del tiket a finalizar
         var TurnoAFinalizar = await _context.Turnos.FirstOrDefaultAsync(x => x.Tiket == tiket && x.IdEstado == 3);
+        
+        //Validamos que lo que esto regresa no sea null
         if(TurnoAFinalizar != null){
+            //Se actualiza el estado a atendido y se guarda
             TurnoAFinalizar.IdEstado = 2;
             await _context.SaveChangesAsync();
+            //Se le redireciona a la vista en que estaba
             return RedirectToAction("ColaDeTurnosGestor", "Gestor", new {TipoTurno = TurnoAFinalizar.IdTipoTurno});
         }else{
             return RedirectToAction("Dashboard", "Gestor");

@@ -3,6 +3,12 @@
     ViewData["Title"] = "Home Page";
 }
 <style>
+    body{
+        background-image: url(https://i.ibb.co/fvNRSwq/people-and-technology.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     .btn-large {
         padding: 15px;
     }
@@ -31,25 +37,48 @@
         border-radius: 30px;
         font-size: 16px;
         width: 300px;
-        height: 80px;
+        height: 40px;
         background-color: #32C2B9;
         color: white;
+        text-shadow: 0px 1px 1px black;
     }
 
     .input {
         border-radius: 30px;
         font-size: 16px;
         width: 300px;
-        height: 80px;
+        height: 40px;
         color: black;
     }
 
-    button {
+    .btnDocumento{
+        color: white;
+        background-image: url(https://i.etsystatic.com/7388389/r/il/354b3d/2434422114/il_fullxfull.2434422114_2qqm.jpg);
+        background-size: cover;
+        border: 2px solid black;
+        font-size: 20px;
+        font-weight: bold;
+        height: 60px;
+        text-shadow: 0px 1px 1px black;
+        box-shadow: 0 6px 1px black;
+    }
+    
+    .btnDocumento:active{
+        transform: scale(0.8);
+    }
+
+    .buttonIngresar{
+        box-shadow: 10px 7px 1px black;
         border-radius: 50px;
         font-size: 16px;
         width: 190px;
-        height: 80px;
+        height: 50px;
         color: black;
+    }
+
+    .buttonIngresar:active{
+        transform: translateX(10px);
+        box-shadow: 0 0 1px black;
     }
 </style>
 
@@ -77,23 +106,23 @@
         </select>
         <br>
         <br>
-        <input asp-for="Documento"  type="text" class="input" id="input">
+        <input readonly asp-for="Documento"  type="text" class="input" id="input">
         <div class="grid-container">
-            <input type="button" class="item btn-large" value="1" name="" onclick="llenar(1)">
-            <input type="button" class="item btn-large" value="2" name="" onclick="llenar(2)">
-            <input type="button" class="item btn-large" value="3" name="" onclick="llenar(3)">
-            <input type="button" class="item btn-large" value="4" name="" onclick="llenar(4)">
-            <input type="button" class="item btn-large" value="5" name="" onclick="llenar(5)">
-            <input type="button" class="item btn-large" value="6" name="" onclick="llenar(6)">
-            <input type="button" class="item btn-large" value="7" name="" onclick="llenar(7)">
-            <input type="button" class="item btn-large" value="8" name="" onclick="llenar(8)">
-            <input type="button" class="item btn-large" value="9" name="" onclick="llenar(8)">
-            <input type="button" class="item btn-large" value="Limpiar" name="" onclick="Limpiar()">
-            <input type="button" class="item btn-large" value="0" name="" onclick="llenar(0)">
-            <input type="button" class="item btn-large" value="Borrar" name="" onclick="remover()">
+            <input type="button" class="btnDocumento btn" value="1" name="" onclick="llenar(1)">
+            <input type="button" class="btnDocumento btn" value="2" name="" onclick="llenar(2)">
+            <input type="button" class="btnDocumento btn" value="3" name="" onclick="llenar(3)">
+            <input type="button" class="btnDocumento btn" value="4" name="" onclick="llenar(4)">
+            <input type="button" class="btnDocumento btn" value="5" name="" onclick="llenar(5)">
+            <input type="button" class="btnDocumento btn" value="6" name="" onclick="llenar(6)">
+            <input type="button" class="btnDocumento btn" value="7" name="" onclick="llenar(7)">
+            <input type="button" class="btnDocumento btn" value="8" name="" onclick="llenar(8)">
+            <input type="button" class="btnDocumento btn" value="9" name="" onclick="llenar(9)">
+            <input type="button" class="btnDocumento btn" value="Limpiar" name="" onclick="Limpiar()">
+            <input type="button" class="btnDocumento btn" value="0" name="" onclick="llenar(0)">
+            <input type="button" class="btnDocumento btn" value="Borrar" name="" onclick="remover()">
 
         </div>
 
-        <button type="submit">Ingresar</button>
+        <button class="buttonIngresar" type="submit">Ingresar</button>
     </form>
 </center>
