@@ -3,51 +3,62 @@
 }
 
 
+<div class="Container_viewGen">
+    <h1 id="title" class="title_genview">En que te podemos ayudar hoy</h1> 
 
-<h1 id="title">En que te podemos ayudar hoy</h1>  <br>  <br>
+        <style>
 
-    <style>
 
-        h1 {
-            font-size: 55px;
-            text-align: center;
-            margin-top: 25px;
-        }
+            .Container_viewGen{
+                margin-top: 15%;
+                display: inline-block;
+                margin-left: 20%;
+            }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-            gap: 20px; /* Espacio entre elementos */
-            margin-left: 215px;
-            margin-top: 50px;
-        }
+            .title_genview{
+                margin-top: 2%;
+                margin-bottom: 3%;
+                align-content: center;
+            }
 
-        /* Estilos para los botones */
-        .boton {
-            padding: 10px;
-            color: #ffffff;
-            text-align: center;
-            font-size: 30px;
-            border: none;
-            cursor: pointer;
-            width: 330px;
-            height: 100px;
-            border-radius: 20px;
-        }
+            h1 {
+                font-size: 55px;
+                margin-top: 25px;
+            }
 
-        .btn-danger{
-            width: 80px;
-            margin-left: 214px;
-            margin-top: 15px;
-            background-color: #F63C3C;
-        }
-        
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+                gap: 20px; /* Espacio entre elementos */
+            }
 
-    </style>
+            /* Estilos para los botones */
+            .boton {
+                padding: 25px;
+                color: #ffffff;
+                text-align: center;
+                font-size: 30px;
+                border: none;
+                cursor: pointer;
+                width: 330px;
+                height: 100px;
+                border-radius: 20px;
+            }
 
-    <div class="grid-container">
-        <a class="boton btn" asp-action="Generar" asp-controller="Home" asp-route-tipo="3" id="btnPagos" style="background-color: #FA7C38;">Pagos </a>
-        <a class="boton btn" asp-action="Generar" asp-controller="Home" asp-route-tipo="4" id="btnCitas" style="background-color: #FFC847;">Citas</a>
-        <a class="boton btn" asp-action="Generar" asp-controller="Home" asp-route-tipo="1" id="btnMedicamentos" style="background-color: #4E0FA6;">Medicamentos</a>
-        <a class="boton btn" asp-action="Generar" asp-controller="Home" asp-route-tipo="2" id="btnIg" style="background-color: #52E0BA;">Información General</a>
-    </div>
+            .btn-danger{
+                width: 80px;
+                margin-left: 214px;
+                margin-top: 15px;
+                background-color: #F63C3C;
+            }
+            
+
+        </style>
+
+        <div class="grid-container">
+            <a class="boton btn" asp-action="Generar" asp-controller="Home" asp-route-tipo="3" id="btnPagos" style="background-color: #FA7C38;">Pagos </a>
+            <a class="boton btn" asp-action="Generar" asp-controller="Home" asp-route-tipo="4" id="btnCitas" style="background-color: #FFC847;">Citas</a>
+            <a class="boton btn" asp-action="Generar" asp-controller="Home" asp-route-tipo="1" id="btnMedicamentos" style="background-color: #4E0FA6;">Medicamentos</a>
+            <a class="boton btn" asp-action="Generar" asp-controller="Home" asp-route-tipo="2" id="btnIg" style="background-color: #52E0BA;">Información General</a>
+        </div>
+</div>
