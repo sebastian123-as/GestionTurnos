@@ -34,7 +34,7 @@ namespace Turnos.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("ErrorValidacion", "Turnos");
             }
         }
         public IActionResult Generar(int? tipo)

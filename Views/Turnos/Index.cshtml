@@ -45,8 +45,8 @@
     </style>
 
     <div class="grid-container">
-        <button class="boton" id="btnPagos" style="background-color: #FA7C38;">Pagos </button>
-        <button class="boton" id="btnCitas" style="background-color: #FFC847;">Citas</button>
-        <button class="boton" id="btnMedicamentos" style="background-color: #4E0FA6;">Medicamentos</button>
-        <button class="boton" id="btnIg" style="background-color: #52E0BA;">Información General</button>
+        <a class="boton" asp-action="Generar" asp-controller="User" asp-route-tipo="3" id="btnPagos" style="background-color: #FA7C38;">Pagos </a>
+        <a class="boton" asp-action="Generar" asp-controller="User" asp-route-tipo="4" id="btnCitas" style="background-color: #FFC847;">Citas</a>
+        <a class="boton" asp-action="Generar" asp-controller="User" asp-route-tipo="1" id="btnMedicamentos" style="background-color: #4E0FA6;">Medicamentos</a>
+        <a class="boton"  id="btnIg" style="background-color: #52E0BA;">Información General</a>
     </div>
