@@ -1,0 +1,26 @@
+<style>
+.card {
+    width: 400px;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background-color: #52E0BA; 
+}
+h4{
+    background-color: #FA7C38;
+}
+
+</style>
+<center>
+    <div class="card">
+    <h2>Su turno ha sido generado</h2>
+    <br>
+        <h4>Tipo del turno: @ViewBag.Esto.Tiket</h4>
+    </div>
+    <a asp-action="Index" class="btn btn-danger" asp-controller="Home">Salir</a>
+</center>

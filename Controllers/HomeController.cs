@@ -63,7 +63,7 @@ namespace Turnos.Controllers
                 };
                 _context.Turnos.Add(turnon);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Turno", "Home");
             }else{
                 Turno oTurno = new(){
                     Discapacidad = false,
@@ -74,8 +74,14 @@ namespace Turnos.Controllers
                 };
                 _context.Turnos.Add(oTurno);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Turno", "Home");
             }
+        }
+        public IActionResult Turno(int id)
+        {
+            ViewBag.Esto = _context.Turnos.OrderByDescending(e => e.Id).FirstOrDefault();
+            
+            return View();
         }
 
     }
