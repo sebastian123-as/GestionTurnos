@@ -17,3 +17,66 @@ html {
   min-height: 100%;
 }
 
+/*--------------Grafico barras------------------*/
+
+
+.contenedor {
+  padding: 30px 25px 20px;
+  background: linear-gradient(450deg, #f0f0f0, #e0e0e0); /* Cambia los colores aquí */
+  border: 2px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.contenedor * {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333; /* Cambia el color del texto aquí */
+  font-weight: 500;
+}
+
+.counter-turnos:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.detalles {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.menu {
+  border: 1px solid black; /* Cambia el color del borde aquí */
+  border-radius: 20px;
+  width: 50%;
+  height: 15px;
+  border-radius: 10px;
+}
+
+.prioritarios-menu {
+  background: linear-gradient(90deg, transparent, #F63C3C);
+  animation: barra-prioritarios 2s forwards;
+}
+
+.prioritarios-medicamentos{
+  background: linear-gradient(90deg, transparent, #4E0FA6);
+  animation: barra-medicamentos 2s forwards;
+}
+
+.prioritarios-citas{
+  background: linear-gradient(90deg, transparent, #FFC847);
+  animation: barra-citas 2s forwards;
+}
+
+.prioritarios-InfoGeneral{
+  background: linear-gradient(90deg, transparent, #52E0BA);
+  animation: barra-InfoGeneral 2s forwards;
+}
+
+.prioritarios-Pagos{
+  background: linear-gradient(90deg, transparent, #FA7C38);
+  animation: barra-Pagos 2s forwards;
+}
+
+

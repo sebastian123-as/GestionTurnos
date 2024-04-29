@@ -57,6 +57,42 @@
         border-radius: 50%;
         padding: 5px;
     }
+
+    /* Animacion de la barra */
+    @@keyframes barra-prioritarios {
+        100% {
+            width: @(Counter.CountPrioritarios * 7)%;
+            
+        }
+    }
+
+    @@keyframes barra-medicamentos {
+        100% {
+            width: @(Counter.CountMedicamentos * 7)%;
+            
+        }
+    }
+
+    @@keyframes barra-citas {
+        100% {
+            width: @(Counter.CountCitas * 7)%;
+            
+        }
+    }
+
+    @@keyframes barra-InfoGeneral {
+        100% {
+            width: @(Counter.CountInfoGeneral * 7)%;
+            
+        }
+    }
+
+    @@keyframes barra-Pagos {
+        100% {
+            width: @(Counter.CountPagos * 7)%;
+            
+        }
+    }
 </style>
 
 <div class="row mt-5">
@@ -65,7 +101,8 @@
         <h3>Conteo turnos</h3>
         <ul class="sortable-list">
             <!--Lista prioritarios-->
-            <a asp-controller="Gestor" asp-action="ColaDeTurnosGestor" asp-route-TipoTurno="6" class="item" draggable="true">
+            <a asp-controller="Gestor" asp-action="ColaDeTurnosGestor" asp-route-TipoTurno="6" class="item"
+                draggable="true">
                 <div class="details">
                     <img src="https://www.quepasa.com.ve/site/wp-content/uploads/2017/12/CRPD.jpg" alt="">
                     <span>PRIORITARIOS</span>
@@ -77,7 +114,8 @@
             </a>
 
             <!--Lista Medicamentos-->
-            <a asp-controller="Gestor" asp-action="ColaDeTurnosGestor" asp-route-TipoTurno="1" class="item" draggable="true">
+            <a asp-controller="Gestor" asp-action="ColaDeTurnosGestor" asp-route-TipoTurno="1" class="item"
+                draggable="true">
                 <div class="details">
                     <img src="https://th.bing.com/th/id/OIP.sDp8efVuRJCpI0h2mx5lGgHaE8?w=285&h=190&c=7&r=0&o=5&pid=1.7"
                         alt="">
@@ -90,7 +128,8 @@
             </a>
 
             <!--Lista citas-->
-            <a asp-controller="Gestor" asp-action="ColaDeTurnosGestor" asp-route-TipoTurno="4" class="item" draggable="true">
+            <a asp-controller="Gestor" asp-action="ColaDeTurnosGestor" asp-route-TipoTurno="4" class="item"
+                draggable="true">
                 <div class="details">
                     <img src="https://th.bing.com/th/id/R.04ad775d2e4310af6e16f5e814a0480a?rik=z6qTzMq8E%2fbqHg&pid=ImgRaw&r=0"
                         alt="">
@@ -103,20 +142,22 @@
             </a>
 
             <!--Lista citas-->
-            <a asp-controller="Gestor" asp-action="ColaDeTurnosGestor" asp-route-TipoTurno="2" class="item" draggable="true">
+            <a asp-controller="Gestor" asp-action="ColaDeTurnosGestor" asp-route-TipoTurno="2" class="item"
+                draggable="true">
                 <div class="details">
                     <img src="https://www.comunidadbaratz.com/wp-content/uploads/2021/04/Las-fuentes-de-informacion-son-los-recursos-necesarios-para-poder-acceder-a-la-informacion-y-al-conocimiento.jpg"
                         alt="">
                     <span>INFORMACION GENERAL</span>
                 </div>
                 <i class="uil uil-draggabledots"></i>
-                <span style="width: 50px; background-color: #FFC847" class="float-end counter-tikets text-center">
+                <span style="width: 50px; background-color: #52E0BA" class="float-end counter-tikets text-center">
                     @Counter.CountInfoGeneral
                 </span>
             </a>
-            
+
             <!--Lista prioritarios-->
-            <a asp-controller="Gestor" asp-action="ColaDeTurnosGestor" asp-route-TipoTurno="3" class="item" draggable="true">
+            <a asp-controller="Gestor" asp-action="ColaDeTurnosGestor" asp-route-TipoTurno="3" class="item"
+                draggable="true">
                 <div class="details">
                     <img src="https://inai.io/hubfs/Header%20-%20What%20Is%20Grandfathering_-min.png" alt="">
                     <span>PAGOS</span>
@@ -128,6 +169,63 @@
             </a>
 
         </ul>
+    </div>
+    <div class="text-center offset-md-1 col-md-5">
+        <h3>Estadisticas lista espera</h1>
+
+
+        <div class="contenedor mt-5">
+
+            <div class="conteo-turnos">
+
+                <div class="detalles">
+                    <span>PRIORITARIOS</span>
+                    <span>@Counter.CountPrioritarios</span>
+                </div>
+
+                <div class="prioritarios-menu menu"></div>
+            </div>
+
+            <div class="conteo-turnos">
+
+                <div class="detalles">
+                    <span>MEDICAMENTOS</span>
+                    <span>@Counter.CountMedicamentos</span>
+                </div>
+
+                <div class="prioritarios-medicamentos menu"></div>
+            </div>
+
+            <div class="conteo-turnos">
+
+                <div class="detalles">
+                    <span>CITAS</span>
+                    <span>@Counter.CountCitas</span>
+                </div>
+
+                <div class="prioritarios-citas menu"></div>
+            </div>
+
+            <div class="conteo-turnos">
+
+                <div class="detalles">
+                    <span>INFORMACION GENERAL</span>
+                    <span>@Counter.CountInfoGeneral</span>
+                </div>
+
+                <div class="prioritarios-InfoGeneral menu"></div>
+            </div>
+
+            <div class="conteo-turnos">
+
+                <div class="detalles">
+                    <span>PAGOS</span>
+                    <span>@Counter.CountPagos</span>
+                </div>
+
+                <div class="prioritarios-Pagos menu"></div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -158,6 +256,3 @@
 
     sortableList.addEventListener("dragover", initSortableList);
 </script>
-
-
-
